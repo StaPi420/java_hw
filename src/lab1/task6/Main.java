@@ -1,5 +1,7 @@
 package lab1.task6;
 
+import java.io.PrintStream;
+import java.nio.charset.StandardCharsets;
 import java.util.concurrent.CyclicBarrier;
 
 public class Main {
@@ -27,6 +29,7 @@ public class Main {
         }
     }
     public static void main(String[] args) {
+        System.setOut(new PrintStream(System.out, true, StandardCharsets.UTF_8));
         for (int i = 0; i < N; i++) {
             new Thread(new Runner(i + 1)).start();
             System.out.println("Бегун " + (i + 1) + " готовится к старту");
